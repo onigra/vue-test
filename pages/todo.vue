@@ -2,7 +2,7 @@
   <div>
     <ul>
       <input placeholder="" @keyup.enter="addTodo">
-      <li v-for="todo in todos">{{ todo }}</li>
+      <li v-for="(todo, index) in todos">{{ todo }}<button @click="removeTodo(index)">delete</button></li>
     </ul>
 
   </div>
@@ -17,6 +17,9 @@ export default {
     addTodo(event) {
       this.$store.commit('todo/add', event.target.value)
       event.target.value = ''
+    },
+    removeTodo(index) {
+      this.$store.commit('todo/rm', index)
     }
   }
 }
