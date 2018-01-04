@@ -2,7 +2,10 @@
   <div>
     <ul>
       <input placeholder="" @keyup.enter="addTodo">
-      <li v-for="(todo, index) in todos">{{ todo }}<button @click="removeTodo(index)">delete</button></li>
+      <li v-for="(todo, index) in todos">
+        {{ todo.title }} : {{ todo.description}}
+        <button @click="removeTodo(index)">delete</button>
+      </li>
     </ul>
 
   </div>
