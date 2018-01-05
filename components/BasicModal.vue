@@ -17,11 +17,7 @@
                 <el-row>
                   <el-col :span="12">
                     <div class="grid-content">
-                      <ul>
-                        <li>ゆうだい</li>
-                        <li>たまき</li>
-                        <li>もり</li>
-                      </ul>
+                      <helper-list />
                     </div>
                   </el-col>
                   <el-col :span="12">
@@ -46,6 +42,8 @@
 </template>
 
 <script>
+import HelperList from '~/components/HelperList.vue'
+
 export default {
   data() {
     return {
@@ -81,6 +79,9 @@ export default {
     closeModal(e) {
       this.$store.commit('modal/close')
     },
+  },
+  components: {
+    HelperList,
   },
 }
 </script>
