@@ -67,6 +67,7 @@ export default {
       ],
       config: {
         defaultView: 'agendaDay',
+        aspectRatio: 1.1,
       },
     }
   },
