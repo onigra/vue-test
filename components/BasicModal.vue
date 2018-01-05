@@ -26,11 +26,7 @@
                   </el-col>
                   <el-col :span="12">
                     <div class="grid-content">
-                      <ul>
-                        <li>ゆうだい</li>
-                        <li>たまき</li>
-                        <li>もり</li>
-                      </ul>
+                      <full-calendar :events="events"></full-calendar>
                     </div>
                   </el-col>
                 </el-row>
@@ -51,6 +47,26 @@
 
 <script>
 export default {
+  data() {
+    return {
+      events: [
+        {
+          title: 'event1',
+          start: '2018-01-01',
+        },
+        {
+          title: 'event2',
+          start: '2018-01-05',
+          end: '2018-01-07',
+        },
+        {
+          title: 'event3',
+          start: '2018-01-09T12:30:00',
+          allDay: false,
+        },
+      ],
+    }
+  },
   computed: {
     showModal(e) {
       return this.$store.state.modal.showModal
