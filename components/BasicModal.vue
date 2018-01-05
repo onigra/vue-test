@@ -26,7 +26,7 @@
                   </el-col>
                   <el-col :span="12">
                     <div class="grid-content">
-                      <full-calendar :events="events"></full-calendar>
+                      <full-calendar :events="events" :config="config"></full-calendar>
                     </div>
                   </el-col>
                 </el-row>
@@ -65,6 +65,9 @@ export default {
           allDay: false,
         },
       ],
+      config: {
+        defaultView: 'agendaDay',
+      },
     }
   },
   computed: {
