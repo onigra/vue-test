@@ -1,5 +1,7 @@
-<<template>
-  <NotAssinedList />
+<template>
+  <div>
+    <NotAssinedList />
+  </div>
 </template>
 
 <script>
