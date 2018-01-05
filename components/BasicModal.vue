@@ -22,7 +22,9 @@
                   </el-col>
                   <el-col :span="12">
                     <div class="grid-content">
-                      <full-calendar :events="events" :config="config"></full-calendar>
+                      <div v-if="showCalendar">
+                        <full-calendar :events="events" :config="config"></full-calendar>
+                      </div>
                     </div>
                   </el-col>
                 </el-row>
@@ -73,6 +75,9 @@ export default {
   computed: {
     showModal(e) {
       return this.$store.state.modal.showModal
+    },
+    showCalendar(e) {
+      return this.$store.state.calendar.showCalendar
     },
   },
   methods: {

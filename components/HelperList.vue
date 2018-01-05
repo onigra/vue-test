@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li v-for="(name, index) in Helpers" :key="index">
-        {{ name }}
+        <a href="#" @click="openCalendar">{{ name }}</a>
       </li>
     </ul>
     <BasicModal />
@@ -15,6 +15,11 @@ export default {
     return {
       Helpers: ['ゆうだい', 'たまき', 'もり'],
     }
+  },
+  methods: {
+    openCalendar(e) {
+      this.$store.commit('calendar/open')
+    },
   },
 }
 </script>
