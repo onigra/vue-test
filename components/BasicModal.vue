@@ -51,18 +51,19 @@ export default {
     return {
       events: [
         {
-          title: 'event1',
-          start: '2018-01-01',
+          title: 'アイザック=ネテロ',
+          start: '2018-01-05T10:30:00',
+          end: '2018-01-05T12:30:00',
         },
         {
-          title: 'event2',
-          start: '2018-01-05',
-          end: '2018-01-07',
+          title: '亀仙人',
+          start: '2018-01-05T13:00:00',
+          end: '2018-01-05T14:00:00',
         },
         {
-          title: 'event3',
-          start: '2018-01-09T12:30:00',
-          allDay: false,
+          title: 'ジョセフ・ジョースター',
+          start: '2018-01-05T15:00:00',
+          end: '2018-01-05T17:00:00',
         },
       ],
       config: {
