@@ -14,11 +14,26 @@
 
             <div class="modal-body">
               <slot name="body">
-                <ul>
-                  <li>ゆうだい</li>
-                  <li>たまき</li>
-                  <li>もり</li>
-                </ul>
+                <el-row>
+                  <el-col :span="12">
+                    <div class="grid-content">
+                      <ul>
+                        <li>ゆうだい</li>
+                        <li>たまき</li>
+                        <li>もり</li>
+                      </ul>
+                    </div>
+                  </el-col>
+                  <el-col :span="12">
+                    <div class="grid-content">
+                      <ul>
+                        <li>ゆうだい</li>
+                        <li>たまき</li>
+                        <li>もり</li>
+                      </ul>
+                    </div>
+                  </el-col>
+                </el-row>
               </slot>
             </div>
 
