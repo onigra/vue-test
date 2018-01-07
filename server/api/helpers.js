@@ -2,8 +2,8 @@ import { Router } from 'express'
 
 const router = Router()
 
-// Mock Users
-const users = [
+// Mock Helpers
+const helpers = [
   {
     id: 1,
     name: 'ゆうだい',
@@ -19,15 +19,15 @@ const users = [
 ]
 
 /* GET users listing. */
-router.get('/users', function(req, res, next) {
-  res.json(users)
+router.get('/helpers', function(req, res, next) {
+  res.json(helpers)
 })
 
 /* GET user by ID. */
-router.get('/users/:id', function(req, res, next) {
+router.get('/helpers/:id', function(req, res, next) {
   const id = parseInt(req.params.id)
-  if (id >= 1 && id <= users.length) {
-    res.json(users[id - 1])
+  if (id >= 1 && id <= helpers.length) {
+    res.json(helpers[id - 1])
   } else {
     res.sendStatus(404)
   }
