@@ -1,21 +1,16 @@
 <template>
   <div>
     <ul>
-      <li v-for="(name, index) in Helpers" :key="index">
-        <a href="#" @click="openCalendar">{{ name }}</a>
+      <li v-for="(helper, index) in helpers" :key="index">
+        <a href="#" @click="openCalendar">{{ helper.name }}</a>
       </li>
     </ul>
-    <BasicModal />
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      Helpers: ['ゆうだい', 'たまき', 'もり'],
-    }
-  },
+  props: ['helpers'],
   methods: {
     openCalendar(e) {
       this.$store.commit('calendar/open')

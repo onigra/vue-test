@@ -16,7 +16,7 @@
                 <el-row>
                   <el-col :span="12">
                     <div class="grid-content">
-                      <helper-list />
+                      <helper-list :helpers="helpers"/>
                     </div>
                   </el-col>
                   <el-col :span="12">
@@ -44,6 +44,7 @@
 
 <script>
 import HelperList from '~/components/HelperList.vue'
+import axios from '~/plugins/axios'
 
 export default {
   data() {
@@ -69,7 +70,13 @@ export default {
         defaultView: 'agendaDay',
         aspectRatio: 1.1,
       },
+      helpers: [],
     }
+  },
+  mounted() {
+    axios.get('/api/helpers').then(res => {
+      this.helpers = res.data
+    })
   },
   computed: {
     showModal(e) {
