@@ -8,7 +8,6 @@
             <div class="modal-header">
               <slot name="header">
                 <button @click="closeModal">close</button>
-                <p>ヘルパー一覧</p>
               </slot>
             </div>
 
