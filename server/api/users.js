@@ -3,7 +3,20 @@ import { Router } from 'express'
 const router = Router()
 
 // Mock Users
-const users = [{ name: 'Alexandre' }, { name: 'Pooya' }, { name: 'Sébastien' }]
+const users = [
+  {
+    id: 1,
+    name: 'ゆうだい',
+  },
+  {
+    id: 2,
+    name: 'たまき',
+  },
+  {
+    id: 3,
+    name: 'もり',
+  },
+]
 
 /* GET users listing. */
 router.get('/users', function(req, res, next) {
@@ -13,8 +26,8 @@ router.get('/users', function(req, res, next) {
 /* GET user by ID. */
 router.get('/users/:id', function(req, res, next) {
   const id = parseInt(req.params.id)
-  if (id >= 0 && id < users.length) {
-    res.json(users[id])
+  if (id >= 1 && id <= users.length) {
+    res.json(users[id - 1])
   } else {
     res.sendStatus(404)
   }
