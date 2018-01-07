@@ -6,12 +6,12 @@
         <a href="#" @click="openModal">{{ name }}</a>
       </li>
     </ul>
-    <BasicModal />
+    <HelperModal />
   </div>
 </template>
 
 <script>
-import BasicModal from '~/components/BasicModal.vue'
+import HelperModal from '~/components/HelperModal.vue'
 
 export default {
   data() {
@@ -25,7 +25,7 @@ export default {
     },
   },
   components: {
-    BasicModal,
+    HelperModal,
   },
 }
 </script>
