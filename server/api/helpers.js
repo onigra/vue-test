@@ -2,7 +2,7 @@ import { Router } from 'express'
 
 const router = Router()
 
-// Mock Helpers
+// Mock Helpers const helpers = [
 const helpers = [
   {
     id: 1,
@@ -18,6 +18,45 @@ const helpers = [
   },
 ]
 
+const events = [
+  [
+    {
+      title: 'アイザック=ネテロ',
+      start: '2018-01-05T10:30:00',
+      end: '2018-01-05T12:30:00',
+    },
+    {
+      title: '亀仙人',
+      start: '2018-01-05T13:00:00',
+      end: '2018-01-05T14:00:00',
+    },
+    {
+      title: 'ジョセフ・ジョースター',
+      start: '2018-01-05T15:00:00',
+      end: '2018-01-05T17:00:00',
+    },
+  ],
+  [
+    {
+      title: '桜友蔵',
+      start: '2018-01-05T12:00:00',
+      end: '2018-01-05T14:00:00',
+    },
+  ],
+  [
+    {
+      title: '玄海',
+      start: '2018-01-05T11:00:00',
+      end: '2018-01-05T12:00:00',
+    },
+    {
+      title: '岩本虎眼',
+      start: '2018-01-05T15:00:00',
+      end: '2018-01-05T16:00:00',
+    },
+  ],
+]
+
 /* GET users listing. */
 router.get('/helpers', function(req, res, next) {
   res.json(helpers)
@@ -28,6 +67,15 @@ router.get('/helpers/:id', function(req, res, next) {
   const id = parseInt(req.params.id)
   if (id >= 1 && id <= helpers.length) {
     res.json(helpers[id - 1])
+  } else {
+    res.sendStatus(404)
+  }
+})
+
+router.get('/helpers/:id/events', function(req, res, next) {
+  const id = parseInt(req.params.id)
+  if (id >= 1 && id <= helpers.length) {
+    res.json(events[id - 1])
   } else {
     res.sendStatus(404)
   }
