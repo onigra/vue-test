@@ -4,11 +4,12 @@
       <div class="grid-content">
         <ul>
           <li v-for="(helper, index) in helpers" :key="index">
-            <a href="#" @click="fetchCalendar">{{ helper.name }}</a>
+            <a href="#" @click="fetchCalendar(helper.id)">{{ helper.name }}</a>
           </li>
         </ul>
       </div>
     </el-col>
+
     <el-col :span="12">
       <div class="grid-content">
         <div v-if="showCalendar">
@@ -38,8 +39,8 @@ export default {
     },
   },
   methods: {
-    fetchCalendar(e) {
-      this.$store.dispatch('calendar/fetchEventsByHelperId')
+    fetchCalendar(helperId) {
+      this.$store.dispatch('calendar/fetchEventsByHelperId', { helperId: helperId })
     },
   },
 }

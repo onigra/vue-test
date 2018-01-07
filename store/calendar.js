@@ -16,8 +16,8 @@ export const mutations = {
 }
 
 export const actions = {
-  fetchEventsByHelperId(context) {
-    axios.get('/api/helpers/1/events').then((res) => {
+  fetchEventsByHelperId(context, helperId) {
+    axios.get(`/api/helpers/${helperId.helperId}/events`).then((res) => {
       context.commit('setEvents', res.data)
     })
   },
