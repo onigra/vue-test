@@ -51,6 +51,7 @@ export default {
   },
   methods: {
     closeModal(e) {
+      this.$store.commit('calendar/close')
       this.$store.commit('modal/close')
     },
   },

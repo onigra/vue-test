@@ -8,6 +8,7 @@ export const state = () => ({
 export const mutations = {
   close(state) {
     state.showCalendar = false
+    state.events = []
   },
   setEvents(state, events) {
     state.events = events
