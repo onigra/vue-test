@@ -21,7 +21,7 @@ module.exports = {
   plugins: ['~plugins/element-ui', { src: '~plugins/vue-full-calendar', ssr: false }],
   css: ['element-ui/lib/theme-chalk/index.css', 'fullcalendar/dist/fullcalendar.css'],
   build: {
-    vendor: ['element-ui', 'vue-full-calendar'],
+    vendor: ['element-ui', 'vue-full-calendar', 'axios'],
     /*
     ** Run ESLint on save
     */

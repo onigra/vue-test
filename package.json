@@ -16,6 +16,7 @@
     "fmt:fix": "npm run fmt -- --write"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "element-ui": "^2.0.10",
     "nuxt": "^1.0.0-rc11",
     "vue-full-calendar": "^2.5.1"
