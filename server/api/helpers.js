@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import moment from 'moment'
 
 const router = Router()
 
@@ -18,41 +19,44 @@ const helpers = [
   },
 ]
 
+const now = moment()
+const today = now.format('YYYY-MM-DD')
+
 const events = [
   [
     {
       title: 'アイザック=ネテロ',
-      start: '2018-01-05T10:30:00',
-      end: '2018-01-05T12:30:00',
+      start: `${today}T10:30:00`,
+      end: `${today}T12:30:00`,
     },
     {
       title: '亀仙人',
-      start: '2018-01-05T13:00:00',
-      end: '2018-01-05T14:00:00',
+      start: `${today}T13:00:00`,
+      end: `${today}T14:00:00`,
     },
     {
       title: 'ジョセフ・ジョースター',
-      start: '2018-01-05T15:00:00',
-      end: '2018-01-05T17:00:00',
+      start: `${today}T15:00:00`,
+      end: `${today}T17:00:00`,
     },
   ],
   [
     {
       title: '桜友蔵',
-      start: '2018-01-05T12:00:00',
-      end: '2018-01-05T14:00:00',
+      start: `${today}T12:00:00`,
+      end: `${today}T14:00:00`,
     },
   ],
   [
     {
       title: '玄海',
-      start: '2018-01-05T11:00:00',
-      end: '2018-01-05T12:00:00',
+      start: `${today}T11:00:00`,
+      end: `${today}T12:00:00`,
     },
     {
       title: '岩本虎眼',
-      start: '2018-01-05T15:00:00',
-      end: '2018-01-05T16:00:00',
+      start: `${today}T15:00:00`,
+      end: `${today}T16:00:00`,
     },
   ],
 ]
