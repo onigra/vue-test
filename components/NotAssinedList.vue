@@ -13,7 +13,7 @@
           <div class="grid-content">
             <ul>
               <li v-for="(helper, index) in helpers" :key="index">
-                <el-button type="text" @click="innerVisible = true; fetchCalendar(helper.id)">{{ helper.name }}</el-button>
+                <el-button type="text" @click="innerVisible = true; fetchCalendar(helper.id); showCal = true">{{ helper.name }}</el-button>
               </li>
             </ul>
           </div>
@@ -21,13 +21,13 @@
 
         <el-col :span="12">
           <div class="grid-content">
-            <full-calendar v-if="false" :events="this.$store.state.calendar.events" :config="calendarConfig"></full-calendar>
+            <full-calendar v-if="showCal" :events="this.$store.state.calendar.events" :config="calendarConfig"></full-calendar>
           </div>
         </el-col>
       </el-row>
 
       <div slot="footer" class="dialog-footer">
-        <el-button @click="outerVisible = false">Cancel</el-button>
+        <el-button @click="outerVisible = false; showCal = false">Cancel</el-button>
       </div>
     </el-dialog>
   </div>
@@ -50,6 +50,7 @@ export default {
       innerVisible: false,
       helpers: [],
       calendarConfig: calendarConfig,
+      showCal: false,
     }
   },
   methods: {
