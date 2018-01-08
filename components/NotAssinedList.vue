@@ -10,15 +10,19 @@
     <el-dialog title="アサインするヘルパー" width="90%" top="1%" :visible.sync="outerVisible">
       <el-row>
         <el-col :span="12">
-          <ul>
-            <li v-for="(helper, index) in helpers" :key="index">
-              <el-button type="text" @click="innerVisible = true; fetchCalendar(helper.id)">{{ helper.name }}</el-button>
-            </li>
-          </ul>
+          <div class="grid-content">
+            <ul>
+              <li v-for="(helper, index) in helpers" :key="index">
+                <el-button type="text" @click="innerVisible = true; fetchCalendar(helper.id)">{{ helper.name }}</el-button>
+              </li>
+            </ul>
+          </div>
         </el-col>
 
         <el-col :span="12">
-          <full-calendar :events="this.$store.state.calendar.events" :config="calendarConfig"></full-calendar>
+          <div class="grid-content">
+            <full-calendar v-if="false" :events="this.$store.state.calendar.events" :config="calendarConfig"></full-calendar>
+          </div>
         </el-col>
       </el-row>
 
@@ -31,6 +35,7 @@
 
 <script>
 import axios from '~/plugins/axios'
+// import _ from 'lodash'
 
 const calendarConfig = {
   defaultView: 'agendaDay',
