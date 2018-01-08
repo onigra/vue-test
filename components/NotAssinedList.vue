@@ -7,16 +7,20 @@
       </li>
     </ul>
 
-    <el-dialog title="アサインするヘルパー" custom-class="outer-dialog" :visible.sync="outerVisible" width="20%">
-      <el-dialog custom-class="inner-dialog" :visible.sync="innerVisible" top="2%" append-to-body>
-        <full-calendar :events="this.$store.state.calendar.events" :config="calendarConfig"></full-calendar>
-      </el-dialog>
+    <el-dialog title="アサインするヘルパー" width="90%" top="1%" :visible.sync="outerVisible">
+      <el-row>
+        <el-col :span="12">
+          <ul>
+            <li v-for="(helper, index) in helpers" :key="index">
+              <el-button type="text" @click="innerVisible = true; fetchCalendar(helper.id)">{{ helper.name }}</el-button>
+            </li>
+          </ul>
+        </el-col>
 
-      <ul>
-        <li v-for="(helper, index) in helpers" :key="index">
-          <el-button type="text" @click="innerVisible = true; fetchCalendar(helper.id)">{{ helper.name }}</el-button>
-        </li>
-      </ul>
+        <el-col :span="12">
+          <full-calendar :events="this.$store.state.calendar.events" :config="calendarConfig"></full-calendar>
+        </el-col>
+      </el-row>
 
       <div slot="footer" class="dialog-footer">
         <el-button @click="outerVisible = false">Cancel</el-button>
