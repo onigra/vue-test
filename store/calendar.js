@@ -1,18 +1,22 @@
 import axios from '~/plugins/axios'
+import _ from 'lodash'
 
 export const state = () => ({
-  showCalendar: false,
   events: [],
 })
 
+export const getters = {
+  showCalendar(state) {
+    return !_.isEmpty(state.events)
+  },
+}
+
 export const mutations = {
   close(state) {
-    state.showCalendar = false
     state.events = []
   },
   setEvents(state, events) {
     state.events = events
-    state.showCalendar = true
   },
 }
 

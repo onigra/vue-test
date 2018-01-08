@@ -35,7 +35,7 @@ export default {
   props: ['helpers'],
   computed: {
     showCalendar(e) {
-      return this.$store.state.calendar.showCalendar
+      return this.$store.getters['calendar/showCalendar']
     },
   },
   methods: {
