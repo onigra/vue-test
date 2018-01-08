@@ -12,9 +12,7 @@
 
     <el-col :span="12">
       <div class="grid-content">
-        <div v-if="showCalendar">
-          <full-calendar :events="this.$store.state.calendar.events" :config="calendarConfig"></full-calendar>
-        </div>
+        <full-calendar :events="this.$store.state.calendar.events" :config="calendarConfig"></full-calendar>
       </div>
     </el-col>
   </el-row>
